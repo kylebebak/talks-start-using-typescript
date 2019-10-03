@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux'
 
 export interface Getter {
-  response: Response
+  data: any
   key: string
 }
 export function getter(payload: Getter): AnyAction {

@@ -4,11 +4,11 @@ import { Action } from 'redux/actions'
 export default function reduce(state: RootState['getter'] = {}, action: Action): RootState['getter'] {
   switch (action.type) {
     case 'GETTER': {
-      const { response: res, key } = action.payload
+      const { data, key } = action.payload
 
       return {
         ...state,
-        [key]: res,
+        [key]: data,
       }
     }
     default:
