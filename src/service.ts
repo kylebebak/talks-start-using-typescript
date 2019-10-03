@@ -1,20 +1,7 @@
 import { Continent } from 'types'
+import request from 'request-dot-js'
 
 export type GeoData = { data: { continents: Continent[] }; errors: null }
-
-async function postData<Data = any>(url = '', data = {}): Promise<Data> {
-  const response = await fetch(url, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: { 'Content-Type': 'application/json' },
-    redirect: 'follow',
-    referrer: 'no-referrer',
-    body: JSON.stringify(data),
-  })
-  return await response.json()
-}
 
 const geoQuery = `
 {
@@ -32,5 +19,5 @@ const geoQuery = `
 `
 
 export async function getGeo() {
-  return postData<GeoData>('https://countries.trevorblades.com/', { query: geoQuery })
+  return request<GeoData>('https://countries.trevorblades.com/', { body: { query: geoQuery }, method: 'POST' })
 }

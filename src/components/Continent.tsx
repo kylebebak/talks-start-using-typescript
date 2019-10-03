@@ -11,7 +11,16 @@ const Class = ({ continent }: Props) => {
   return (
     <div>
       <div style={{ fontSize: 60 }}>name: {name}</div>
-      <div style={{ fontSize: 30 }}>countries: {countries.length}</div>
+      {countries.map(c => {
+        return (
+          <div key={c.code} style={{ marginTop: 10 }}>
+            <div>{c.code}</div>
+            <div>{c.currency}</div>
+            <div>{c.name}</div>
+            <div>{c.phone}</div>
+          </div>
+        )
+      })}
     </div>
   )
 }

@@ -36,9 +36,9 @@ class Continents extends React.Component<Props> {
 }
 
 const mapStateToProps = (state: RootState) => {
-  const data = state.getter['continents'] as GeoData | undefined
-  if (!data) return { continents: undefined }
-  return { continents: data.data.continents }
+  const res = state.getter['continents']
+  if (!res || res.type !== 'success') return { continents: undefined }
+  return { continents: (res.data as GeoData).data.continents }
 }
 
 export default connect(

@@ -1,5 +1,7 @@
+import { Response } from 'request-dot-js'
+
 export interface RootState {
-  getter: { [key: string]: undefined | {} }
+  getter: { [key: string]: Response | undefined }
 }
 
 export interface Place {

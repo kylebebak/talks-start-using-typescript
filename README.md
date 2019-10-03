@@ -23,5 +23,5 @@ Me gustaría enseñarles cómo user TypeScript en un proyecto de React, porqué 
 - Métodos que se auto-documentan
 - Pensar de manera más rigurosa sobre tu código
 - Entender cómo funciona tu código después de dejarlo un rato
-- Onboaring de nuevos programadores
+- Onboarding de nuevos programadores
 - Te ayuda más tu editor de texto
