@@ -17,6 +17,7 @@ class Continents extends React.Component<Props> {
   async componentDidMount() {
     const res = await getGeo()
     this.props.dispatch(Actions.getter({ key: 'continents', data: res }))
+    console.log('fetched', res)
   }
 
   render() {

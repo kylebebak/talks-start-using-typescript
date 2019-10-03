@@ -8,8 +8,8 @@ Me gustaría platicar un poco de mi acercamiento a TypeScript, porqué considero
 
 ### Outline
 - resumen básico de TypeScript
-  + interfaces, types, inheritance, indexers
+  + interfaces, types, inheritance, indexers, generics, type narrowing, assertions
 - agregar TypeScript a web apps y mobile apps (específicamente los de React/React Native)
   + cómo agregar types para todos los datos que vienen de HTTP APIs
-  + cómo agregar types para 3rd-party librerías
-  + cómo usar TS con React (una breve introducción a props, state)
+  + cómo agregar types a actions y reducers de Redux, y a los datos que lees de Redux
+  + cómo usar TS con React (una breve introducción a props)
