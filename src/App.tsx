@@ -1,24 +1,21 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-import { getGeo } from 'service'
-import logo from './logo.svg'
-import './App.css'
+import Countries from 'screens/Countries'
+import OtherPage from 'screens/OtherPage'
 
-class App extends React.Component {
-  async componentDidMount() {
-    const res = await getGeo()
-    console.log(res.data)
-  }
+import store from 'redux/store'
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Route exact path="/" component={Countries} />
+        <Route exact path="/other" component={OtherPage} />
+      </Router>
+    </Provider>
+  )
 }
 
 export default App
