@@ -1,13 +1,15 @@
 import { AnyAction } from 'redux'
 
-export interface ToggleModal {
-  visible: boolean
+export interface Getter {
+  response: Response
+  key: string
 }
-export function toggleModal(payload: ToggleModal): AnyAction {
+export function getter(payload: Getter): AnyAction {
   return {
-    type: 'TOGGLE_MODAL',
+    type: 'GETTER',
     payload,
   }
 }
 
-export type Action = { type: 'TOGGLE_MODAL'; payload: ToggleModal }
+export type Action =
+  | { type: 'GETTER'; payload: Getter }
