@@ -5,7 +5,6 @@ export default function reduce(state: RootState['getter'] = {}, action: Action):
   switch (action.type) {
     case 'GETTER': {
       const { data, key } = action.payload
-
       return {
         ...state,
         [key]: data,

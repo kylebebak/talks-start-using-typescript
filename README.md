@@ -9,11 +9,7 @@ Me gustaría platicar un poco de mi acercamiento a TypeScript, porqué considero
 ### Outline
 - resumen básico de TypeScript
   + interfaces, types, inheritance, indexers
-- cómo empezar a usar TypeScript en tus proyectos
-  + `.d.ts` para agregar type annotations a librerías ya escritas en JS, sin tocar el source code
-    * un ejemplo con `request-dot-js`
-    * union types y type narrowing
-  + agregar TypeScript a web apps y mobile apps (específicamente los de React/React Native)
-    * cómo agregar types para todos los datos que vienen de HTTP APIs
-    * cómo agregar types para 3rd-party librerías
-    * cómo usar TS con React (una breve introducción a props, state)
+- agregar TypeScript a web apps y mobile apps (específicamente los de React/React Native)
+  + cómo agregar types para todos los datos que vienen de HTTP APIs
+  + cómo agregar types para 3rd-party librerías
+  + cómo usar TS con React (una breve introducción a props, state)
