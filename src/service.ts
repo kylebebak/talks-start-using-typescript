@@ -18,6 +18,7 @@ const geoQuery = `
 }
 `
 
-export async function getGeo() {
+export async function getGeo(a: any) {
+  console.log('getGeo', a)
   return request<GeoData>('https://countries.trevorblades.com/', { body: { query: geoQuery }, method: 'POST' })
 }

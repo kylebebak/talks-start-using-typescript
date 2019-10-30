@@ -5,14 +5,21 @@ import { Response, SuccessResponse } from 'request-dot-js'
 import { RootState } from 'types'
 import * as Actions from 'redux/actions'
 
-export function useGetter<T>(getter: () => Promise<Response<T>>, key: string) {
+/**
+ * Invokes `getter`, throws response into `getter` branch under `key`, and returns response from this branch.
+ *
+ * Data is only refetched if `key` changes; passing in a new `getter` function alone doesn't refetch data.
+ */
+export function useGetRedux<T>(key: string, getter: () => Promise<Response<T>>) {
   const dispatch = useDispatch()
+  console.log('useGetRedux')
 
   useEffect(() => {
+    console.log('useGetRedux - useEffect')
     getter().then(res => {
       dispatch(Actions.getter({ data: res, key }))
     })
-  }, [key, getter, dispatch])
+  }, [dispatch, key]) // eslint-disable-line
 
   const response = useSelector((state: RootState) => {
     const res = state.getter[key]
