@@ -29,7 +29,12 @@ class Continents extends React.Component<Props> {
     return (
       <div>
         <Link to="/other">Other Page</Link>
-        {continents.map(c => <ContinentComponent key={c.code} continent={c} />)}
+        <Link style={{ marginLeft: 20 }} to="/hooks">
+          Hooks
+        </Link>
+        {continents.map(c => (
+          <ContinentComponent key={c.code} continent={c} />
+        ))}
       </div>
     )
   }
